@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# 🧭 Antrex Admin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Antrex Admin is a modern admin dashboard built with **React**, **TypeScript**, and **Vite** for high performance and fast development.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Getting Started
 
-## React Compiler
+### 1️⃣ Prerequisites
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Make sure you have the following installed:
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (v22 or later)
+- [Yarn](https://yarnpkg.com/) (v1 or v4)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Install dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Start development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+yarn dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Runs the app in development mode at
+👉 http://localhost:1000
+
+### Build for production
+
+```bash
+yarn build
+```
+
+Build output will be in the dist/ folder.
+
+### Preview production build
+
+```bash
+yarn preview
+```
+
+Serves the production build locally for testing.
+
+## 🧱 Tech Stack
+
+- [React 19](https://react.dev/)
+- [React Router](https://react.dev/) (v7)
+- [TypeScript](https://www.typescriptlang.org/) (5.9.3)
+- [Vite](https://vite.dev/) (7.1.7)
+- [Tailwindcss](https://tailwindcss.com/) (4.1.14)
+- [Ant Design](https://ant.design/) (5.27.5)
+
+## 📂 Folder Structure
+
+```base
+src/
+ ├── assets/          # Static files
+ ├── components/      # Reusable UI components
+ ├── layout/          # Layout components (e.g., MainLayout)
+ ├── pages/           # App pages (Dashboard, Login, etc.)
+ ├── router/          # React Router configuration
+ └── main.tsx         # App entry point
+
 ```
